@@ -5,7 +5,7 @@ const SETTINGS = {
   gltfModelURL: 'Head_gear.glb',
   cubeMapURL: 'Bridge2/',
   offsetYZ: [0,0.3, 0], // offset of the model in 3D along vertical and depth axis
-  scale: 1.5
+  scale: 2
 };
 
 // some globalz:
