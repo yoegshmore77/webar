@@ -235,4 +235,3 @@ function init_faceFilter(videoSettings){
     }
   }); // end JEELIZFACEFILTER.init call
 }
-
