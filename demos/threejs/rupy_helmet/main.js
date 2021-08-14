@@ -158,7 +158,7 @@ function init_threeScene(spec) {
     faceMesh.renderOrder = -10000;
     faceMesh.frustumCulled = false;
     faceMesh.scale.multiplyScalar(1.12);//==================================================
-    faceMesh.position.set(0, 0.1, -0.25);
+    faceMesh.position.set(0, 0.3, -0.25);/////////
   })
 
   loadingManager.onLoad = () => {
