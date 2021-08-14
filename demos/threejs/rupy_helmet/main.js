@@ -25,7 +25,7 @@ function init_threeScene(spec) {
 
   // deprecated THREE legacy JSON format. GLTF is better now
   helmetLoader.load(
-    './models/helmet/helmet.json',
+    './models/helmet/boxing.json',
     (helmetGeometry) => {
       const helmetMaterial = new THREE.MeshPhongMaterial({
         map: new THREE.TextureLoader().load('./models/helmet/diffuse_helmet.jpg'),
