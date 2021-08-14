@@ -157,8 +157,8 @@ function init_threeScene(spec) {
     faceMesh = new THREE.Mesh(maskBufferGeometry, mat);
     faceMesh.renderOrder = -10000;
     faceMesh.frustumCulled = false;
-    faceMesh.scale.multiplyScalar(1.12/0.5);//==================================================
-    faceMesh.position.set(0, 0.3, -0.25);
+    faceMesh.scale.multiplyScalar(1.12);//==================================================
+    faceMesh.position.set(0, 0.1, -0.25);
   })
 
   loadingManager.onLoad = () => {
