@@ -1,5 +1,13 @@
 "use strict";
 
+// SETTINGS of this demo:
+const SETTINGS = {
+  gltfModelURL: 'Head_gear.glb',
+  cubeMapURL: 'Bridge2/',
+  offsetYZ: [0.3, 0], // offset of the model in 3D along vertical and depth axis
+  scale: 2.5
+};
+
 // some globalz:
 let THREECAMERA = null;
 
@@ -42,7 +50,7 @@ function init_threeScene(spec) {
     //gltf.scene.rotation.z= 90;
     
     
-/*
+
     // center the model:
     const centerBBox = bbox.getCenter(new THREE.Vector3());
     gltf.scene.position.add(centerBBox.multiplyScalar(-1));
@@ -51,7 +59,7 @@ function init_threeScene(spec) {
     // scale the model according to its width:
     const sizeX = bbox.getSize(new THREE.Vector3()).x;
     gltf.scene.scale.multiplyScalar(SETTINGS.scale / sizeX);
-*/
+
     // dispatch the model:
     threeStuffs.faceObject.add(gltf.scene);
   } ); //end gltfLoader.load callback
