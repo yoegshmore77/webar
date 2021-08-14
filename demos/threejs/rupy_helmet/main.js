@@ -22,9 +22,44 @@ function init_threeScene(spec) {
 
   const loadingManager = new THREE.LoadingManager();
   const helmetLoader = new THREE.BufferGeometryLoader(loadingManager);
+  
+  //=======================
+  
+    // IMPORT THE GLTF MODEL:
+  // from https://threejs.org/examples/#webgl_loader_gltf
+  const gltfLoader = new THREE.GLTFLoader();
+  gltfLoader.load( "Head_gear.glb", function ( gltf ) {
+    gltf.scene.traverse( function ( child ) {
+      if ( child.isMesh ) {
+        child.material.envMap = envMap;
+      }
+    } );
+    gltf.scene.frustumCulled = false;
+    
+    // center and scale the object:
+    const bbox = new THREE.Box3().expandByObject(gltf.scene);
+    //gltf.scene.rotation.z = 180;
+    //gltf.scene.rotation.z= 90;
+    
+    
+/*
+    // center the model:
+    const centerBBox = bbox.getCenter(new THREE.Vector3());
+    gltf.scene.position.add(centerBBox.multiplyScalar(-1));
+    gltf.scene.position.add(new THREE.Vector3(0,SETTINGS.offsetYZ[0], SETTINGS.offsetYZ[1]));
+
+    // scale the model according to its width:
+    const sizeX = bbox.getSize(new THREE.Vector3()).x;
+    gltf.scene.scale.multiplyScalar(SETTINGS.scale / sizeX);
+*/
+    // dispatch the model:
+    threeStuffs.faceObject.add(gltf.scene);
+  } ); //end gltfLoader.load callback
+  
+  //===========
 
   // deprecated THREE legacy JSON format. GLTF is better now
-  helmetLoader.load(
+  /*helmetLoader.load(
     './models/helmet/boxing.json',
     (helmetGeometry) => {
       const helmetMaterial = new THREE.MeshPhongMaterial({
@@ -39,9 +74,9 @@ function init_threeScene(spec) {
       helmetMesh.position.z -= 0.5;
       helmetMesh.rotation.x += 0.5;
     }
-  );
+  );*/
 
-  const visiereLoader = new THREE.BufferGeometryLoader(loadingManager);
+  /*const visiereLoader = new THREE.BufferGeometryLoader(loadingManager);
   visiereLoader.load(
     './models/helmet/visiere.json',
     (visiereGeometry) => {
@@ -59,7 +94,7 @@ function init_threeScene(spec) {
       visorMesh.rotation.x += 0.5;
       visorMesh.frustumCulled = false;
     }
-  );
+  );*/
 
   // CREATE THE MASK
   const maskLoader = new THREE.BufferGeometryLoader(loadingManager);
