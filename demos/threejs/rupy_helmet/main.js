@@ -4,7 +4,7 @@
 const SETTINGS = {
   gltfModelURL: 'Head_gear.glb',
   cubeMapURL: 'Bridge2/',
-  offsetYZ: [0,0.9, 0], // offset of the model in 3D along vertical and depth axis
+  offsetYZ: [0,0.3, 0], // offset of the model in 3D along vertical and depth axis
   scale: 2.5
 };
 
@@ -46,7 +46,7 @@ function init_threeScene(spec) {
     
     // center and scale the object:
     const bbox = new THREE.Box3().expandByObject(gltf.scene);
-    //gltf.scene.rotation.z = 180;
+    bbox.rotation.z = 180;
     //gltf.scene.rotation.z= 90;
     
     
