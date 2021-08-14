@@ -153,8 +153,8 @@ function init_threeScene(spec) {
   })
 
   loadingManager.onLoad = () => {
-    HELMETOBJ3D.add(helmetMesh);
-    HELMETOBJ3D.add(visorMesh);
+    //HELMETOBJ3D.add(helmetMesh);
+    //HELMETOBJ3D.add(visorMesh);
     HELMETOBJ3D.add(faceMesh);
 
     addDragEventListener(HELMETOBJ3D);
