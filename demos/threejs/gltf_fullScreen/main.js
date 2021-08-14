@@ -39,7 +39,7 @@ function init_threeScene(spec){
     
     // center and scale the object:
     const bbox = new THREE.Box3().expandByObject(gltf.scene);
-    gltf.scene.rotation.x= 90;
+    gltf.scene.rotation.x= 180;
     //bbox.rotation.z= 180;
 
     // center the model:
